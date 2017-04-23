@@ -1,0 +1,21 @@
+placeholder
+
+<li> You are following <%= current_user.following.count  %> users!
+<li> You are being followed by <%= current_user.followers.count %> users!
+
+<br>
+
+
+<h1>Meme's of those you are following</h1>
+
+<% @memes.each do |meme| %>
+  
+   <%= image_tag meme.image.url(:medium) %>
+   <br>
+   <a href="/profiles/<%= User.find(meme.user_id).id %>"><%= meme.user.email %>
+        <br>
+        <td><%= link_to 'Show', meme %></td>
+        <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+        <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   <br>
+   <% end %>

@@ -10,3 +10,12 @@
         <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
  <% end %>
 
+
+
+
+<li> <%= current_user.followers.count %>
+<li> <%= current_user.following.count %>
+
+<%= render '/components/follow_button', :user => User.find_by_id(params[:id]) %>
+
+                    
