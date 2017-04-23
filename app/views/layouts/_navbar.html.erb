@@ -1,0 +1,7 @@
+ <div class="topnav" id="myTopnav">
+  <%= link_to "Memes Home Page", memes_path  %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Edit My Profile", edit_user_registration_path %>
+  <%= link_to "Sign in",  new_user_session_path %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+</div>

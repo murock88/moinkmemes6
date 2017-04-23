@@ -1,0 +1,18 @@
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+     <th>User ID</th>
+     <th>Email</th>
+    </tr>
+  </thead>
+    <tbody> 
+        <% @users.each do |user| %>
+     <tr>
+        <td> <%= user.id %> </td>
+        <td> <a href="/profiles/<%= user.id %>"><%= user.email %> </a> </td>
+     </tr>    
+        <% end %>
+    </tbody>
+</table>
