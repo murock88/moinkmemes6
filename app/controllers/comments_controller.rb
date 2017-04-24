@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  #load_and_authorize_resource param_method: :my_sanitizer
-  #load_and_authorize_resource :through => :current_user    **find out where these methods came from
+  load_and_authorize_resource param_method: :my_sanitizer
+  load_and_authorize_resource :through => :current_user    #These come from Cancancan
   
     def create
         @meme = Meme.find(params[:meme_id])   
