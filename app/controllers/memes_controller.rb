@@ -5,11 +5,13 @@ class MemesController < ApplicationController
   # GET /memes.json
   def index
     @memes = Meme.all
+    @comments = Comment.all
   end
 
   # GET /memes/1
   # GET /memes/1.json
   def show
+    @comments = Comment.all
   end
 
   # GET /memes/new

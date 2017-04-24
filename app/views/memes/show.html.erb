@@ -5,5 +5,19 @@
   <%= @meme.title %>
 </p>
 
+<%= image_tag @meme.image.url(:medium) %>
+
+<br>
+
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
 <%= link_to 'Back', memes_path %>
+
+<br>
+
+Meme by: <%= @meme.user.email %>
+
+ <%= render @meme.comments %>
+ 
+ <br>
+ 
+ <%= render 'comments/form' %>

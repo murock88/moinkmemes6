@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
          has_many :memes, dependent: :destroy #will delete memes associated with memes
+         has_many :comments
          
         
          has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy

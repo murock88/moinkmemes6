@@ -1,8 +1,21 @@
- <div class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav">
   <%= link_to "Memes Home Page", memes_path  %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-  <%= link_to "Edit My Profile", edit_user_registration_path %>
+  
+  
+ 
+ <% if current_user %>
+   <%= link_to "Edit My Profile", edit_user_registration_path %>
+   <%= link_to "Your News Page", newsfeed_home_path %>
+   <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+   <%= link_to current_user.email, memes_path  %>
+   
+ <% end %> 
+
+
+ <% if !current_user %>
   <%= link_to "Sign in",  new_user_session_path %>
   <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Your News Page", newsfeed_home_path %>
+ <% end %> 
+ 
 </div>
+
